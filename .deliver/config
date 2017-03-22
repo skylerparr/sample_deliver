@@ -1,0 +1,10 @@
+APP="sample_deliver"
+
+BUILD_HOST="localhost"
+BUILD_USER="skyler"
+BUILD_AT="/tmp/edeliver/sample_deliver/builds"
+
+STAGING_HOSTS="localhost"
+STAGING_USER="skyler"
+DELIVER_TO="/home/tmp/web"
+
