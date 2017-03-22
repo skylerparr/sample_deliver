@@ -6,5 +6,13 @@ BUILD_AT="/tmp/edeliver/sample_deliver/builds"
 
 STAGING_HOSTS="localhost"
 STAGING_USER="skyler"
-DELIVER_TO="/home/tmp/web"
+DELIVER_TO="/tmp/web"
 
+pre_erlang_get_and_update_deps() {
+  local _prod_secret_path="$PWD/config/prod.secret.exs"
+  if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    __sync_remote "
+      ln -sfn '$_prod_secret_path' '$BUILD_AT/config/prod.secret.exs'
+    "
+  fi
+}
